@@ -1,3 +1,4 @@
+import App from 'next/app'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -67,3 +68,8 @@ export default function Home() {
     </div>
   )
 }
+
+App.getInitialProps("/:id", (request, response) => {
+  const params = request.params;
+  console.log(params)
+})
